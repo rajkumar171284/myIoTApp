@@ -1,0 +1,54 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content color="light" [fullscreen]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="loginFn()">
+
+
+    <div id="container">
+      <!-- <ion-card > -->
+      <ion-grid>
+        <ion-row color="mytheme">
+
+          <ion-col class="ion-text-center" size="8" offset="2">
+            <ion-img src="./assets/logo.png"> </ion-img>
+          </ion-col>
+          <ion-col class="ion-padding ion-text-center" size="12">
+            <ion-title color="mytext" size="large" class="lg-title ion-padding">
+              Fire Hydrant System
+            </ion-title>
+
+          </ion-col>
+          <ion-col  size="12">
+            <ion-card class="ion-padding" color="mycard">
+              <ion-item color="mycard" lines="none">
+                <ion-label position="stacked">Username :</ion-label>
+                <ion-input name="userName" type="text" formControlName="userName"></ion-input>
+                        <p class="text-danger"
+                          *ngIf="loginForm.get('userName').touched && loginForm.get('userName').hasError('required')">
+                          user is required</p>
+              </ion-item>
+              <ion-item color="mycard" lines="none">
+                <ion-label position="stacked">Password :</ion-label>
+                <ion-input type="text" formControlName="passCode"></ion-input>
+                <p class="text-danger"
+                  *ngIf="loginForm.get('passCode').touched && loginForm.get('passCode').hasError('required')">
+                  Password is required</p>
+  
+                </ion-item>
+              
+            </ion-card>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- </ion-card> -->
+    </div>
+    <ion-tab-bar color="mytheme" class="text-center">
+      <ion-input color="light" type="submit" value="Sign-In"></ion-input>
+    </ion-tab-bar>
+  </form>
+
+</ion-content>

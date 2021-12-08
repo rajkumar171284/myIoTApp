@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Control Panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    
+      <ion-item>
+        <label></label>
+        <ion-input type="text" [(ngModel)]="textVal1" placeholder="Enter your data"></ion-input>
+        <ion-button size="medium" color="success" (click)="sendValue('text1')" slot="end">Send</ion-button>
+
+      </ion-item>
+      
+    
+  </ion-card>
+
+
+  
+  <ion-card>
+    <ion-item>
+      <ion-label>Selected Value</ion-label>
+      <!-- <ion-note slot="end">On</ion-note> -->
+
+      <ion-title color="tertiary">
+        {{textVal2?textVal2:0}}
+      </ion-title>
+
+    </ion-item>
+    <ion-item>
+      
+        <ion-range snaps="true" snaps="true" ticks="false" pin="true" [(ngModel)]="textVal2" min="0" max="100" color="secondary">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">100</ion-label>
+        </ion-range>
+      
+      <!--  -->
+        <ion-button size="medium" color="success" (click)="sendValue('text2')" slot="end">Send</ion-button>
+      </ion-item>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row >
+      <ion-col  class="ion-no-padding ion-text-center">
+        <ion-card  [color]="!buttonVal1.control?'medium':'primary'" (click)="sendValue('button1')">
+          <ion-icon size="large" [name]="buttonVal1.control?'checkbox-outline':'square-outline'"></ion-icon>
+            <ion-title>Button 1</ion-title>
+                
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="ion-no-padding ion-text-center">
+        <ion-card [color]="!buttonVal2.control?'medium':'primary'" (click)="sendValue('button2')" class="ion-text-center">
+          
+          <ion-icon size="large" [name]="buttonVal2.control?'checkbox-outline':'square-outline'"></ion-icon>
+          <ion-title>Button 2</ion-title>
+
+      
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="signUpForm" >
+    <ion-card>
+        <ion-list>
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input formControlName="username" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="text" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item class="ion-text-center" lines="none">
+            <ion-button slot="end" (click)="submitUser()" color="success">
+            <ion-input type="submit" value="Confirm"></ion-input>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+  </form>
+
+</ion-content>
