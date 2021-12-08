@@ -1,0 +1,7 @@
+{
+  "name": "myIoT",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
